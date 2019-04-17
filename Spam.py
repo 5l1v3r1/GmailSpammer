@@ -34,6 +34,7 @@ password = getpass.getpass("Your password: ")
 To = input("Who do you want to spam?: ")
 subject = input("The subject: ")
 content = input("The message: ")
+msg = 'Subject: %s\n\n%s' % (subject, content)
 os.system("clear")
 print("\033[0m")
 print("\033[32m ")
@@ -48,6 +49,6 @@ except smtplib.SMTPAuthenticationError:
 except:
     print("Something went wrong...")
 
-while 3 < 5:
-    server.sendmail(username, To, content, subject)
+while True:
+    server.sendmail(username, To, msg)
     print("Successfully sent")
